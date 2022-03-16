@@ -36,11 +36,14 @@
 	<p> Press the button to create an new element of type div and then add it to the container.
 		</p>
 		<button onclick="makeNewDiv()">Add value</button>
+        <button onclick="fetchItem()">Fetch</button>
+        <button onclick="zap()">Zap values</button>
 	
 	
 </body>
 <script>
-	function makeNewDiv(){
+	function makeNewDiv()
+    {
 		/* make the div and its text */
 		let element = document.createElement("div")
         document.getElementById("t").value
@@ -52,5 +55,38 @@
 		container.appendChild(element)
 		
 	}
+
+    function fetchItem()
+    {
+     var queueItems= document.getElementsByClassName("queue");
+     b=queueItems.length;
+     if(b>0)
+     { 
+           for (let i = 0; i < b; i++)
+         {
+                queueItems[b - 1].remove(); 
+        
+         }
+
+
+     }
+    }
+    
+    function zap()
+    {
+        var queueItems = document.getElementsByClassName("queue")
+        var len = queueItems.length;
+        var item = document.getElementById("t").value;
+        for (let i = 0; i < len; i++)
+         {
+            if (item == queueItems[i].innerHTML)
+             {
+                queueItems[i].remove();
+                console.log("We are getting rid of all the elements with that text");
+             }
+        }
+    }
+
+
 </script>
 </html>	
