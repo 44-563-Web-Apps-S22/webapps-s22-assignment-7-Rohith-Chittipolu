@@ -87,27 +87,27 @@
         }
     }
 
-    function removeDup(){
-      for(i=0;i<queueItems.length;i++)
-      
-         n=queueItems.length;
-          j = 0;  
-        for ( i=0; i<n-1; i++){  
-            if (queueItems[i] != queueItems[i+1]){  
-                temp[j++] = queueItems[i];  
-            }  
-         }  
-        temp[j++] = queueItems[n-1];     
-         
-        for ( i=0; i<j; i++){  
-            queueItems[i] = temp[i];  
-        }  
-        
-        }  
+    
+
+function removeDup() {
+
+queueItems = document.getElementsByClassName('queue'); 
+var len = queueItems.length
+
+for (let i = 0; i < len; i++) {
+
+for (let j =i+1; j < len - 1; j++) {
+
+if (queueItems[i].innerHTML == queueItems [j].innerHTML)
+ { 
+   queueItems [j].remove();
+
+}
+}
+}
 
 
-
-
+}
 
    
 
